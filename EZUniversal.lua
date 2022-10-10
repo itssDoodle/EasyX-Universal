@@ -1,0 +1,15 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("EasyX Universal", "GrapeTheme")
+local Main = Window:NewTab("Main")
+local Section = Main:NewSection("Player Settings")
+Section:NewSlider("Walkspeed", "Changes your characters walkspeed.", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+Section:NewSlider("Jump Power", "Changes your characters jump power.", 500, 0, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+local Section = Main:NewSection("Player Abilities")
+Section:NewButton("Fly", "Allows your character to fly. Press E to toggle.", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/RkUtdYb0"))()
+    print("Clicked")
+end)
